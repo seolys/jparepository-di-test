@@ -4,27 +4,25 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;
 import seol.study.jparepositoryditest.topic.entity.Topic;
-import seol.study.jparepositoryditest.topic.entity.TopicId;
-import seol.study.jparepositoryditest.topic.repository.TopicRepository;
 
 @Repository
-public class SimpleJpaRepository implements TopicRepository {
+public class SimpleJpaRepository<T, ID> implements JpaRepository<T, ID> {
 
-	@Override public Optional<Topic> findById(final TopicId topicId) {
+	public Optional<T> findById(final ID topicId) {
 		return Optional.empty();
 	}
 
-	@Override public List<Topic> findAllById(final Iterable<TopicId> topicIds) {
+	public List<T> findAllById(final Iterable<ID> topicIds) {
 		return null;
 	}
 
 
-	@Override public Topic findCustomById() {
+	public Topic findCustomById() {
 		return null;
 	}
 
 
-	@Override public Topic findJooqById() {
+	public Topic findJooqById() {
 		return null;
 	}
 }

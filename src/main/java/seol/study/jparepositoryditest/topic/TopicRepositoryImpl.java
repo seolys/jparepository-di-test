@@ -7,24 +7,24 @@ import seol.study.jparepositoryditest.topic.entity.TopicId;
 import seol.study.jparepositoryditest.topic.repository.TopicRepository;
 
 /**
- * TopicRepository을 직접 상속할 경우, 구현해야 하는 메서드 확인 목적.
+ * TopicRepository을 직접 상속할 경우, 구현해야 하는 메서드 확인 목적 (스프링 빈과 무관)
  */
 //@Component
 public class TopicRepositoryImpl implements TopicRepository {
 
-	@Override public Optional<Topic> findById(final TopicId topicId) {
+	public Optional<Topic> findById(final TopicId topicId) {
 		return Optional.empty();
 	}
 
-	@Override public List<Topic> findAllById(final Iterable<TopicId> topicIds) {
+	public List<Topic> findAllById(final Iterable<TopicId> topicIds) {
 		return null;
 	}
 
-	@Override public Topic findCustomById() {
+	public Topic findCustomById() {
 		return null;
 	}
 
-	@Override public Topic findJooqById() {
+	public Topic findJooqById() {
 		return null;
 	}
 }
